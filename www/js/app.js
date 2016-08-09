@@ -59,6 +59,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('tab.student-detail', {
+      url: '/student/:studentId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/student-detail.html',
+          controller: 'StudentDetailCtrl'
+        }
+      }
+    })
 
   .state('tab.account', {
     url: '/account',

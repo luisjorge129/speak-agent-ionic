@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('StudentsCtrl', function($scope, Chats, $http) {
+.controller('StudentsCtrl', function($scope, $http) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -25,8 +25,15 @@ angular.module('starter.controllers', [])
   $scope.getStudents();
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('StudentDetailCtrl', function($scope, $stateParams, $http) {
+  var studentId = $stateParams.studentId;
+
+  var url = api_url + studentId;
+
+  $http({url:url})
+  .success(function(data){
+    $scope.student = data;
+  })
 })
 
 .controller('AccountCtrl', function($scope) {
