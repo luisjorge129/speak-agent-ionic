@@ -1,0 +1,11 @@
+<ion-view view-title="Students">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="student in students" type="item-text-wrap">
+        <h2>{{student.first_name}} {{student.last_name}}</h2>
+        <p>Grade: {{student.grade}}, born {{student.dod}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
